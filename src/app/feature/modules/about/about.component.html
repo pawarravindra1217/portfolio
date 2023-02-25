@@ -16,8 +16,14 @@
                                 Proven ability to analyze problems, design and develop suitable solutions while adhering to established software development 
                                 principles and standards. Highly organized, detail-oriented and self-motivated individual with excellent communication and 
                                 problem-solving skills. Experienced in working within different software development life cycles (SDLC) and process models 
-                                like Waterfall, Agile and Spiral. Hands-on experience with programming languages such as Java, C#, Python, JavaScript and SQL. 
-                                Skilled in utilizing databases including MS SQL Server, Oracle, and MySQL.</p>
+                                like Waterfall, Agile and Spiral. 
+                            </p>
+                            <p>
+                                Haivng experience in developing web applications utilizing Angular, 
+                                .NET Core, C#, and SQL Server. Proven track record of successful implementations from design to deployment, 
+                                with a focus on delivering quality code and results. Skilled in creating reusable components and libraries 
+                                for use in multiple projects. Experienced in working with stakeholders, product teams, and developers to ensure project success
+                            </p>
                     </div>
                 </div>
                 <div class="row">
@@ -39,8 +45,46 @@
                             <div class="skill-item padd-15" *ngFor="let obj of skillsInfo">
                                 <h5>{{obj?.skillName}}</h5>
                                 <div class="progress">
-                                    <div class="progress-in"  [ngStyle]="'width':{{obj?.percentage}}" style="width: 76%;"></div>
+                                    <div class="progress-in"  [ngStyle]="{'width':'obj.percentage'}" style="width: 76%;"></div>
                                     <div class="skill-percent">{{obj?.percentage}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="education padd-15">
+                        <h3 class="title">Educaiton</h3>
+                        <div class="row">
+                            <div class="timeline-box padd-15">
+                                <div class="timeline shadow-dark">
+                                    <!-- timeline item-->
+                                    <div class="timeline-item" *ngFor="let educationObj of education">
+                                        <div class="circle-dot"></div>
+                                        <h3 class="timeline-date">
+                                            <i class="fa fa-calendar"></i> {{educationObj?.year}}
+                                        </h3>
+                                        <h4 class="timeline-title">{{educationObj?.title}}</h4>
+                                        <p class="timeline-text" *ngFor="let text of educationObj?.description">{{text}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience padd-15">
+                        <h3 class="title">Experience</h3>
+                        <div class="row">
+                            <div class="timeline-box padd-15">
+                                <div class="timeline shadow-dark">
+                                    <!-- timeline item-->
+                                    <div class="timeline-item" *ngFor="let experienceObj of experience">
+                                        <div class="circle-dot"></div>
+                                        <h3 class="timeline-date">
+                                            <i class="fa fa-calendar"></i> {{experienceObj?.year}}
+                                        </h3>
+                                        <h4 class="timeline-title">{{experienceObj?.title}}</h4>
+                                        <p class="timeline-text" *ngFor="let text of experienceObj?.description">{{text}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
