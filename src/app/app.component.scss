@@ -1,0 +1,10 @@
+$fullheight:100vh;
+
+.main-body-wrapper {
+    height: $fullheight;
+    display: flex;
+    .sidenav-wrapper {
+        height: $fullheight;
+
+    }
+}

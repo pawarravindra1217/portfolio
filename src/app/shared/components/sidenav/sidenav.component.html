@@ -1,0 +1,15 @@
+<div class="section">
+    <div class="logo">
+        <a href="#"><span>R</span>avindra</a>
+    </div>
+    <div class="nav-toggler">
+        <span></span>
+    </div>
+    <ul class="nav d-block">
+        <li *ngFor="let item of sidenavItems" >
+            <a  [routerLink]="[item.pageRoute]" routerLinkActive="active">
+                <i class="fa fa-home"></i> {{item?.name}}
+            </a>
+        </li>
+    </ul>
+</div>
