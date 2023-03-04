@@ -12,6 +12,9 @@ import { PortfolioComponent } from './portfolio.component';
   imports: [
     CommonModule,
     PortfolioRoutingModule
+  ],
+  exports: [
+    PortfolioComponent
   ]
 })
 export class PortfolioModule { }

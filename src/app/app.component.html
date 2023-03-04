@@ -7,7 +7,26 @@
             <app-sidenav></app-sidenav>
         </div>
         <div class="col-10 col-md-12 col-sm-12 col-lg-10 main-section-container p-0">
-            <router-outlet></router-outlet>
+            <div (click)="showPopup(1, $event)" class="nav-toggler">
+                <span></span>
+            </div>
+            <div *ngIf="showPopover" class="nav-popover">
+                <app-sidenav></app-sidenav>
+            </div>
+            <div class="page-wise">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="all-sections">
+                <app-home></app-home>
+                <app-about></app-about>
+                <app-services></app-services>
+                <app-portfolio></app-portfolio>
+                <app-contact></app-contact>
+            </div>
+            <div class="day-night s-icon">
+                <i (click)="toggleTheme()" *ngIf="isDarkTheme" class="fa fa-moon-o"></i>
+                <i (click)="toggleTheme()" *ngIf="!isDarkTheme" class="fa fa-sun-o dark"></i>
+            </div>
         </div>
     </div>
     <!-- <div class="container-fluid p-0 m-0">

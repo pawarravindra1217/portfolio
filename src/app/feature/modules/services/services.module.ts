@@ -12,6 +12,9 @@ import { ServicesComponent } from './services.component';
   imports: [
     CommonModule,
     ServicesRoutingModule
+  ],
+  exports:[
+    ServicesComponent
   ]
 })
 export class ServicesModule { }

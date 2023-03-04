@@ -13,27 +13,32 @@ export class SidenavComponent implements OnInit {
     {
       id: 1,
       name:'Home',
-      pageRoute:'/features/home'
+      pageRoute:'/features/home',
+      icon:'fa fa-home'
     },
     {
       id: 2,
       name:'About',
-      pageRoute:'/features/about'
+      pageRoute:'/features/about',
+      icon:'fa fa-info-circle'
     },
     {
       id: 3,
       name:'Services',
-      pageRoute:'/features/services'
+      pageRoute:'/features/services',
+      icon:'fa fa-folder'
     },
     {
       id: 4,
       name:'Portfolio',
-      pageRoute:'/features/portfolio'
+      pageRoute:'/features/portfolio',
+      icon:'fa fa-suitcase'
     },
     {
       id: 5,
       name:'Contact',
-      pageRoute:'/features/contact'
+      pageRoute:'/features/contact',
+      icon:'fa fa-address-book'
     }
   ]
   constructor(private router: Router) { }

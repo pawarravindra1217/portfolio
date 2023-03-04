@@ -53,22 +53,26 @@ export class AboutComponent implements OnInit {
     {
       id:1,
       skillName:'Angular',
-      percentage: '90%'
+      percentage: '90%',
+      size:'90px'
     },
     {
       id:2,
       skillName:'.Net Core',
-      percentage: '85%'
+      percentage: '85%',
+      size:'90px'
     },
     {
       id:3,
       skillName:'HTML',
-      percentage: '90%'
+      percentage: '90%',
+      size:'90px'
     },
     {
       id:4,
       skillName:'CSS',
-      percentage: '70%'
+      percentage: '70%',
+      size:'90px'
     }
   ]
 
