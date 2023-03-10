@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioInterface } from './modals/portfolio-interface';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
+  portfolioDetails: PortfolioInterface[] = [
+    {
+      id:1,
+      title:'Bito',
+      type: 'IDE Plugin',
+      imagePath:'/assets/images/portfolio1.png'
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {

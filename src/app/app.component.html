@@ -3,15 +3,21 @@
         <app-header></app-header>
     </div> -->
     <div class="row container-fluid p-0 m-0">
-        <div class="col-2 sidenav-wrapper p-0">
-            <app-sidenav></app-sidenav>
+        <div *ngIf="isHorizontalNav" class="col-2 sidenav-wrapper p-0">
+            <app-sidenav (changeLayout)="changeLayout($event)" [isHorizontalNav]="0"></app-sidenav>
         </div>
-        <div class="col-10 col-md-12 col-sm-12 col-lg-10 main-section-container p-0">
+        <div *ngIf="!isHorizontalNav" class="col-2 sidenav-wrapper-horizontal p-0">
+            <app-sidenav (changeLayout)="changeLayout($event)"
+            [isHorizontalNav]="1"></app-sidenav>
+        </div>
+        <div class="col-10 col-md-12 col-sm-12 col-lg-10 main-section-container p-0" 
+        [ngStyle]="{'width' : !isHorizontalNav ? '100%' : '', 'height' : !isHorizontalNav ? '89vh' : '100vh'}">
             <div (click)="showPopup(1, $event)" class="nav-toggler">
                 <span></span>
             </div>
             <div *ngIf="showPopover" class="nav-popover">
-                <app-sidenav></app-sidenav>
+                <app-sidenav (changeLayout)="changeLayout($event)" 
+                [isHorizontalNav]="0"></app-sidenav>
             </div>
             <div class="page-wise">
                 <router-outlet></router-outlet>
@@ -22,10 +28,6 @@
                 <app-services></app-services>
                 <app-portfolio></app-portfolio>
                 <app-contact></app-contact>
-            </div>
-            <div class="day-night s-icon">
-                <i (click)="toggleTheme()" *ngIf="isDarkTheme" class="fa fa-moon-o"></i>
-                <i (click)="toggleTheme()" *ngIf="!isDarkTheme" class="fa fa-sun-o dark"></i>
             </div>
         </div>
     </div>

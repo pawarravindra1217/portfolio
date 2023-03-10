@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThemingService } from 'src/app/core/services/theming.service';
 import { SidenavInterface } from '../../modals/sidenav-items-modal';
 
 @Component({
@@ -9,6 +10,9 @@ import { SidenavInterface } from '../../modals/sidenav-items-modal';
 })
 export class SidenavComponent implements OnInit {
 
+  @Input() isHorizontalNav: number = 0;
+  @Output() changeLayout = new EventEmitter<any>;
+  @Output() toggleThemse = new EventEmitter<any>;
   sidenavItems: SidenavInterface[] = [
     {
       id: 1,
@@ -41,12 +45,21 @@ export class SidenavComponent implements OnInit {
       icon:'fa fa-address-book'
     }
   ]
-  constructor(private router: Router) { }
+  constructor(private router: Router, public themeService: ThemingService) { 
+
+  }
 
   ngOnInit(): void {
+    console.log('ishorizontal nav', this.isHorizontalNav);
+    
   }
 
   gotoPage(pageRoute: string): void {
     this.router.navigate([pageRoute]);
+  }
+
+  changelayout() {
+    this.isHorizontalNav == 0 ? this.isHorizontalNav = 1 : this.isHorizontalNav = 0;
+    this.changeLayout.next(this.isHorizontalNav);
   }
 }
