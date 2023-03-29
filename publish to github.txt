@@ -1,0 +1,6 @@
+Install angular github pages
+    npm i angular-cli-ghpages --save-dev
+Create prod build
+    ng build --configuration production --base-href "https://pawarravindra1217.github.io/portfolio/"
+publish project
+    npx angular-cli-ghpages --dir=dist/portfolio
