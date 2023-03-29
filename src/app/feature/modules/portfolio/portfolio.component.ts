@@ -13,7 +13,7 @@ export class PortfolioComponent implements OnInit {
       id:1,
       title:'Bito',
       type: 'IDE Plugin',
-      imagePath:'/assets/images/portfolio1.png'
+      imagePath:'assets/images/portfolio1.png'
     }
   ]
   constructor() { }
