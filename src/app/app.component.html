@@ -4,10 +4,10 @@
     </div> -->
     <div class="row container-fluid p-0 m-0">
         <div *ngIf="isHorizontalNav" class="col-2 sidenav-wrapper p-0">
-            <app-sidenav (changeLayout)="changeLayout($event)" [isHorizontalNav]="0"></app-sidenav>
+            <app-sidenav (optionSelected)="optionSelected($event)" (changeLayout)="changeLayout($event)" [isHorizontalNav]="0"></app-sidenav>
         </div>
         <div *ngIf="!isHorizontalNav" class="col-2 sidenav-wrapper-horizontal p-0">
-            <app-sidenav (changeLayout)="changeLayout($event)"
+            <app-sidenav (changeLayout)="changeLayout($event)" (optionSelected)="optionSelected($event)"
             [isHorizontalNav]="1"></app-sidenav>
         </div>
         <div class="col-10 col-md-12 col-sm-12 col-lg-10 main-section-container p-0" 
@@ -23,11 +23,11 @@
                 <router-outlet></router-outlet>
             </div>
             <div class="all-sections">
-                <app-home></app-home>
-                <app-about></app-about>
-                <app-services></app-services>
-                <app-portfolio></app-portfolio>
-                <app-contact></app-contact>
+                <app-home id="Home1234"></app-home>
+                <app-about id="About1234"></app-about>
+                <app-services id="Services1234"></app-services>
+                <app-portfolio id="Portfolio1234"></app-portfolio>
+                <app-contact id="Contact1234"></app-contact>
             </div>
         </div>
     </div>

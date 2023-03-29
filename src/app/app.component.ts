@@ -62,6 +62,12 @@ export class AppComponent implements AfterViewInit {
     }
   }
   
+  optionSelected(event: string) {
+    console.log('option selected', event);
+    const a = document.getElementById(event+'1234') as HTMLElement;
+    a.scrollIntoView();
+    
+  }
 
   
 }

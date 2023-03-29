@@ -4,7 +4,7 @@
     </div>
     <div>
         <ul class="nav d-block">
-            <li *ngFor="let item of sidenavItems" >
+            <li *ngFor="let item of sidenavItems" (click)="menuOptionSelected(item.name)" >
                 <a  [routerLink]="[item.pageRoute]" routerLinkActive="active">
                     <i *ngIf="isHorizontalNav != 1" [class]="item?.icon"></i> {{item?.name}}
                 </a>

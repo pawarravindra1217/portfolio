@@ -13,6 +13,7 @@ export class SidenavComponent implements OnInit {
   @Input() isHorizontalNav: number = 0;
   @Output() changeLayout = new EventEmitter<any>;
   @Output() toggleThemse = new EventEmitter<any>;
+  @Output() optionSelected = new EventEmitter<any>;
   sidenavItems: SidenavInterface[] = [
     {
       id: 1,
@@ -61,5 +62,9 @@ export class SidenavComponent implements OnInit {
   changelayout() {
     this.isHorizontalNav == 0 ? this.isHorizontalNav = 1 : this.isHorizontalNav = 0;
     this.changeLayout.next(this.isHorizontalNav);
+  }
+
+  menuOptionSelected(item: string) {
+    this.optionSelected.emit(item)
   }
 }
