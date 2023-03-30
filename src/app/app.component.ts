@@ -16,17 +16,27 @@ export class AppComponent implements AfterContentInit {
   }
 
   ngAfterContentInit() {
-    if(!this.isHorizontalNav == true) {
+    // if(!this.isHorizontalNav == true) {
+    //   (document.getElementsByClassName('all-sections')[0] as HTMLElement).style.display = 'none';
+    //   (document.getElementsByClassName('page-wise')[0] as HTMLElement).style.display = 'block';
+    //   Array.from((document.getElementsByClassName('section'))).forEach(element => {
+    //       (element as HTMLElement).style.height = 'auto';
+    //   });
+    // }
+    const navToggler =  (document.getElementsByClassName('nav-toggler')[0] as HTMLElement);
+    if(navToggler) {
+      (document.getElementsByClassName('all-sections')[0] as HTMLElement).style.display = 'block';
+      (document.getElementsByClassName('page-wise')[0] as HTMLElement).style.display = 'none';
+      Array.from((document.getElementsByClassName('section'))).forEach(element => {
+          (element as HTMLElement).style.height = 'auto';
+      });
+      this.isHorizontalNav = true;
+    } else {
       (document.getElementsByClassName('all-sections')[0] as HTMLElement).style.display = 'none';
       (document.getElementsByClassName('page-wise')[0] as HTMLElement).style.display = 'block';
       Array.from((document.getElementsByClassName('section'))).forEach(element => {
           (element as HTMLElement).style.height = 'auto';
       });
-    }
-    const navToggler =  (document.getElementsByClassName('nav-toggler')[0] as HTMLElement);
-    if(navToggler) {
-      this.isHorizontalNav = true;
-    } else {
       this.isHorizontalNav = false;
     }
   }
