@@ -15,6 +15,7 @@
     --bg-black-50: #393939;
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
+    --overlay-color: #ff230057;
 }
 body {
     line-height: 1.5;
@@ -764,9 +765,50 @@ h3.my-profession {
 }
 
 .portfolio .portfolio-item {
+    padding: 0;
     flex: 0 0 33.33%;
     max-width: 33.33%;
-    margin-bottom: 30px;
+    position: relative;
+}
+
+.portfolio-item:hover .overlay{
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    align-items: center;
+}
+
+ 
+.portfolio-item .overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    background-color: var(--overlay-color);
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+}
+
+.portfolio-item .overlay .portfolio-overlay-buttons {
+    top: 38%;
+    right: 31%;
+    position: absolute;
+}
+
+.portfolio-item .overlay .portfolio-overlay-buttons .btn-overlay {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 26px;;
+    background: var(--skin-color);
+    color: white;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    border-radius: 0px !important;
+    transition: all 0.3s ease;
 }
 
 .portfolio .portfolio-item-inner:hover {
@@ -774,8 +816,7 @@ h3.my-profession {
 }
 
 .portfolio .portfolio-item-inner {
-    border: 6px solid var(--bg-black-100);
-    border-radius: 10px;
+    border-radius: 0px;
     overflow: hidden;
     cursor: pointer;
     height: 100%;
@@ -787,7 +828,7 @@ h3.my-profession {
     display: block;
 }
 .portfolio .portfolio-item-inner .portfolio-img {
-    height: 75%;
+    height: 100%;
 }
 
 .portfolio .portfolio-item-inner .portfolio-title {
@@ -1106,3 +1147,12 @@ h3.my-profession {
   ::-webkit-scrollbar-thumb:hover {
     background: var(--skin-color); ; 
   }
+
+  .card {
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    height: 100px;
+    transition: all 0.3s ease-in-out;
+    /* Other styles */
+  }
+ 
