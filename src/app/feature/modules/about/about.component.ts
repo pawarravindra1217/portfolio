@@ -137,4 +137,9 @@ export class AboutComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  scrollToContact() {
+    const a = document.getElementById('Contact1234') as HTMLElement;
+    a.scrollIntoView();
+  }
+
 }

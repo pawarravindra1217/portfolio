@@ -11,5 +11,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  scrollToContact() {
+    const a = document.getElementById('Contact1234') as HTMLElement;
+    a.scrollIntoView();
+  }
 
 }

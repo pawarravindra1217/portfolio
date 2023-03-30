@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterContentInit {
   title = 'portfolio';
   showPopover: boolean = false;
   isDarkTheme: boolean = false;
@@ -15,13 +15,19 @@ export class AppComponent implements AfterViewInit {
    
   }
 
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     if(!this.isHorizontalNav == true) {
-      (document.getElementsByClassName('page-wise')[0] as HTMLElement).style.display = 'none';
-      (document.getElementsByClassName('all-sections')[0] as HTMLElement).style.display = 'block';
+      (document.getElementsByClassName('all-sections')[0] as HTMLElement).style.display = 'none';
+      (document.getElementsByClassName('page-wise')[0] as HTMLElement).style.display = 'block';
       Array.from((document.getElementsByClassName('section'))).forEach(element => {
           (element as HTMLElement).style.height = 'auto';
       });
+    }
+    const navToggler =  (document.getElementsByClassName('nav-toggler')[0] as HTMLElement);
+    if(navToggler) {
+      this.isHorizontalNav = true;
+    } else {
+      this.isHorizontalNav = false;
     }
   }
 
@@ -66,8 +72,5 @@ export class AppComponent implements AfterViewInit {
     console.log('option selected', event);
     const a = document.getElementById(event+'1234') as HTMLElement;
     a.scrollIntoView();
-    
   }
-
-  
 }

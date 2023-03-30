@@ -20,6 +20,7 @@ body {
     line-height: 1.5;
     font-size: 16px;
     font-family: 'Poppins sans-sefif';
+    overflow-y: hidden;
 }
 *
 {
@@ -484,6 +485,7 @@ h3.my-profession {
 
 .home .home-info .buttons .btn{
     margin-right: 15px;
+    margin-top: 8px;
 }
 
 // About
@@ -929,7 +931,6 @@ h3.my-profession {
     .section .operations {
         position: inherit;
     }
-
     .section .operations .day-night .fa-columns,
     .section2 .operations .day-night .fa-columns {
         display: none;
